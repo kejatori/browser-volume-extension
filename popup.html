@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Volume Booster</h1>
+    <span id="status" class="status">Off</span>
+  </header>
+
+  <div class="readout"><span id="value">100</span><small>%</small></div>
+
+  <input id="slider" type="range" min="0" max="600" step="5" value="100" aria-label="Volume">
+  <div class="ticks"><span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span></div>
+
+  <div class="presets">
+    <button data-v="50">50%</button>
+    <button data-v="100">100%</button>
+    <button data-v="200">200%</button>
+    <button data-v="300">300%</button>
+    <button data-v="600">600%</button>
+  </div>
+
+  <label class="toggle">
+    <input id="limiter" type="checkbox" checked>
+    <span>Limiter <em>(prevents harsh clipping at high boost)</em></span>
+  </label>
+
+  <button id="stop" class="stop" disabled>Turn off for this tab</button>
+  <p id="error" class="error" hidden></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
